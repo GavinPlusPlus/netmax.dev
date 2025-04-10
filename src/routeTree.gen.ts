@@ -11,13 +11,21 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
-import { Route as DetailedProjectsImport } from './routes/_detailed-projects'
+import { Route as TheTeamImport } from './routes/the-team'
+import { Route as TheStackImport } from './routes/the-stack'
 import { Route as IndexImport } from './routes/index'
 
 // Create/Update Routes
 
-const DetailedProjectsRoute = DetailedProjectsImport.update({
-  id: '/_detailed-projects',
+const TheTeamRoute = TheTeamImport.update({
+  id: '/the-team',
+  path: '/the-team',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const TheStackRoute = TheStackImport.update({
+  id: '/the-stack',
+  path: '/the-stack',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -38,11 +46,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
-    '/_detailed-projects': {
-      id: '/_detailed-projects'
-      path: ''
-      fullPath: ''
-      preLoaderRoute: typeof DetailedProjectsImport
+    '/the-stack': {
+      id: '/the-stack'
+      path: '/the-stack'
+      fullPath: '/the-stack'
+      preLoaderRoute: typeof TheStackImport
+      parentRoute: typeof rootRoute
+    }
+    '/the-team': {
+      id: '/the-team'
+      path: '/the-team'
+      fullPath: '/the-team'
+      preLoaderRoute: typeof TheTeamImport
       parentRoute: typeof rootRoute
     }
   }
@@ -52,37 +67,42 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '': typeof DetailedProjectsRoute
+  '/the-stack': typeof TheStackRoute
+  '/the-team': typeof TheTeamRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '': typeof DetailedProjectsRoute
+  '/the-stack': typeof TheStackRoute
+  '/the-team': typeof TheTeamRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
-  '/_detailed-projects': typeof DetailedProjectsRoute
+  '/the-stack': typeof TheStackRoute
+  '/the-team': typeof TheTeamRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | ''
+  fullPaths: '/' | '/the-stack' | '/the-team'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | ''
-  id: '__root__' | '/' | '/_detailed-projects'
+  to: '/' | '/the-stack' | '/the-team'
+  id: '__root__' | '/' | '/the-stack' | '/the-team'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  DetailedProjectsRoute: typeof DetailedProjectsRoute
+  TheStackRoute: typeof TheStackRoute
+  TheTeamRoute: typeof TheTeamRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  DetailedProjectsRoute: DetailedProjectsRoute,
+  TheStackRoute: TheStackRoute,
+  TheTeamRoute: TheTeamRoute,
 }
 
 export const routeTree = rootRoute
@@ -96,14 +116,18 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/_detailed-projects"
+        "/the-stack",
+        "/the-team"
       ]
     },
     "/": {
       "filePath": "index.tsx"
     },
-    "/_detailed-projects": {
-      "filePath": "_detailed-projects.tsx"
+    "/the-stack": {
+      "filePath": "the-stack.tsx"
+    },
+    "/the-team": {
+      "filePath": "the-team.tsx"
     }
   }
 }

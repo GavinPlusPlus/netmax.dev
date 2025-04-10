@@ -13,6 +13,10 @@ const Routes = [
         name: "Home",
         route: "/"
     },
+    {
+        name: "The Team",
+        route: "/the-team"
+    }
 ]
 
 export const Nav = () => {
