@@ -6,7 +6,7 @@ import "../index.css"
 const RootLayout = () => {
 
   return (
-    <div className='transition-all animate-fade-in min-h-screen bg-background text-foreground'>
+    <div className='transition-all animate-fade-in min-h-screen container mx-auto'>
 
       <header>
         <Nav />
