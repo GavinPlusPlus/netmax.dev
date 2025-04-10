@@ -12,7 +12,7 @@ export const NameCard = () => {
     return (
         <div className="w-full">
             <div className="flex items-center gap-2">
-                <div className="flex-grow mx-auto">
+                <div className="grow mx-auto">
                     <div className="md:text-5xl text-3xl font-bold">Gavin Kerr</div>
                     <div className="md:text-2xl text-lg">Student and Software Developer</div>
                 </div>
