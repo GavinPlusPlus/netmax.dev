@@ -9,7 +9,7 @@ const DetailedProjects = () => {
         <div className="w-full transition-all animate-fade-in">
             <div className="flex flex-col">
 
-                <Link to='/projects' className='my-2 w-fit'>
+                <Link to='/' className='my-2 w-fit'>
                     <Button className='gap-2'>
                         <SkipBackIcon />
                         Back to Projects

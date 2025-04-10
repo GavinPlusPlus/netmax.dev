@@ -26,7 +26,7 @@ if (!rootElement.innerHTML) {
   const root = ReactDOM.createRoot(rootElement)
   root.render(
     <StrictMode>
-      <ThemeProvider defaultTheme='system' storageKey="gavinkerr.dev-theme">
+      <ThemeProvider defaultTheme='system' storageKey="netmax.github.io-theme">
         <RouterProvider router={router} />
       </ThemeProvider>
     </StrictMode>,
