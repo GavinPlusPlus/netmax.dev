@@ -16,6 +16,7 @@ const team_data = [
         name: "Dax McPartland",
         photo_url: Dax_NetMax,
         personal_website: "https://daxmcpartland.github.io/",
+        linkedin: "https://www.linkedin.com/in/dax-mcpartland/",
         tasks: [
             "Frontend",
             "Backend",
@@ -27,6 +28,7 @@ const team_data = [
         name: "Gavin Kerr",
         photo_url: Gavin_NetMax,
         personal_website: "https://gavinkerr.dev/",
+        linkedin: "https://www.linkedin.com/in/kerrgavin/",
         tasks: [
             "Frontend",
             "Backend",
@@ -48,6 +50,7 @@ const team_data = [
     {
         name: "John (Jack) Severson",
         photo_url: Jack_NetMax,
+        linkedin: "https://www.linkedin.com/in/jack-severson-26618b255/",
         tasks: [
             "Frontend",
             "Backend",
@@ -58,6 +61,7 @@ const team_data = [
     {
         name: "Ryan Taffe",
         photo_url: Ryan_NetMax,
+        linkedin: "https://www.linkedin.com/in/ryan-taffe-549b3b260/",
         tasks: [
             "Frontend",
             "Backend",
@@ -82,6 +86,7 @@ function RouteComponent() {
                         photo_url={member.photo_url}
                         tasks={member.tasks}
                         personal_website={member.personal_website}
+                        linkedin={member.linkedin}
                         className="sm:w-min-xs md:w-min-sm lg:w-min-md"
                     >
                         {member.children}

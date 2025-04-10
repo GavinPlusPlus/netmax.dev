@@ -7,18 +7,19 @@
 import { ImageWithSkeleton } from "@/components/image-with-skeleton";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { Link } from "lucide-react";
+import { Link, Linkedin } from "lucide-react";
 
 interface TeamMemberCardProps {
     name: string;
     personal_website?: string;
+    linkedin?: string;
     photo_url: string;
     tasks: string[];
     className?: string;
     children?: React.ReactNode;
 }
 
-export const TeamMemberCard = ({ name, personal_website, photo_url, tasks, className, children }: TeamMemberCardProps) => {
+export const TeamMemberCard = ({ name, personal_website, linkedin, photo_url, tasks, className, children }: TeamMemberCardProps) => {
 
     return (
         <Card className={`w-full mx-auto my-4 ${className},`}>
@@ -31,7 +32,19 @@ export const TeamMemberCard = ({ name, personal_website, photo_url, tasks, class
                 />
                 <div className="gap-4">
                     <div>
-                        <div className="text-4xl mb-4">{name}</div>
+                        <div className="flex flex-row items-center justify-between">
+                            <div className="text-4xl mb-4">{name}</div>
+                            {linkedin && (
+                                <a
+                                    href={linkedin}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-blue-500 hover:text-blue-700 flex mb-4">
+                                    <Linkedin size={32} />
+                                </a>
+                            )}
+                        </div>
+
                         {personal_website && (
                             <div className="text-lg mb-2">
                                 Personal Website:
@@ -69,7 +82,18 @@ export const TeamMemberCard = ({ name, personal_website, photo_url, tasks, class
                 />
                 <div className="gap-4">
                     <div className="mt-2">
-                        <div className="text-3xl mb-4">{name}</div>
+                    <div className="flex flex-row items-center justify-between">
+                            <div className="text-4xl mb-4">{name}</div>
+                            {linkedin && (
+                                <a
+                                    href={linkedin}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-blue-500 hover:text-blue-700 flex mb-4">
+                                    <Linkedin size={32} />
+                                </a>
+                            )}
+                        </div>
                         {personal_website && (
                             <div className="text-lg mb-2">
                                 Personal Website:
