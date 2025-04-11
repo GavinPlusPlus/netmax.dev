@@ -28,8 +28,8 @@ const team_data = [
                 <div className='text-xl'>
                     Bio:
                 </div>
-                <div className='text-md'>
-                    I'm a senior graduating next month with a Bachelor’s in Computer Science and a minor in Mathematics. After graduation, I'll be joining <u><a href="https://lucid.co" target="_blank" rel="noopener noreferrer">Lucid Software</a></u> as a Software Engineer. I have experience building full-stack applications, including NetMax for L3Harris, developing websites with React, and creating mobile apps with React Native. I'm proficient in <strong>Python</strong>, <strong>JavaScript</strong>, and <strong>C++</strong>. My interests include algorithms, databases, and system design. Outside of computer science, I enjoy rock climbing, playing billiards, and pickleball.   
+                <div className='text-sm'>
+                    I'm a senior graduating next month with a Bachelor’s in Computer Science and a minor in Mathematics. After graduation, I'll be joining <u><a href="https://lucid.co" target="_blank" rel="noopener noreferrer">Lucid Software</a></u> as a Software Engineer. I have experience building full-stack applications, including NetMax for L3Harris, developing websites with React, and creating mobile apps with React Native. I'm proficient in <strong>Python</strong>, <strong>JavaScript</strong>, and <strong>C++</strong>. My interests include algorithms, databases, and system design. Outside of computer science, I enjoy rock climbing, playing billiards, and pickleball.
                 </div>
             </>
         )
@@ -51,8 +51,8 @@ const team_data = [
                 <div className='text-xl'>
                     Description:
                 </div>
-                <div className='text-md'>
-                    
+                <div className='text-sm'>
+
                 </div>
             </>
         )
@@ -66,7 +66,20 @@ const team_data = [
             "Backend",
             "Python Integration",
             "TRex Integration",
-        ]
+        ],
+        children: (
+            <>
+                <div className='text-xl'>
+                    Description:
+                </div>
+                <div className='text-sm'>
+                    I’m a computer science honors student at the University of Utah, interested in networking, system design, and computer graphics. I enjoy building full-stack systems that work well and are easy to use. Some of my projects have involved data transfer protocols, 3D graphics with OpenGL, and tools for testing network performance. These projects have helped me figure out what kinds of technical challenges I enjoy solving most.
+                    <br />
+                    <br />
+                    I also work as a teaching assistant for the Computer Science Discrete Structures course. I run lab sessions each week and help write homework and exam problems. It’s been a great way to get better at explaining concepts and supporting other students. When I’m not working on school-related stuff, I like to get outside and spend time backpacking or skiing.
+                </div>
+            </>
+        )
     },
     {
         name: "Ryan Taffe",
@@ -100,7 +113,7 @@ function RouteComponent() {
                         className="sm:w-min-xs md:w-min-sm lg:w-min-md"
                     >
                         {member.children}
-                    </TeamMemberCard> 
+                    </TeamMemberCard>
                 </div>
             ))}
         </div>
