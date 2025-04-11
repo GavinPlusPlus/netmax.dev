@@ -22,7 +22,17 @@ const team_data = [
             "Backend",
             "Real-Time Analytics",
             "Scheduling",
-        ]
+        ],
+        children: (
+            <>
+                <div className='text-xl'>
+                    Bio:
+                </div>
+                <div className='text-md'>
+                    I'm a senior graduating next month with a Bachelor’s in Computer Science and a minor in Mathematics. After graduation, I'll be joining <u><a href="https://lucid.co" target="_blank" rel="noopener noreferrer">Lucid Software</a></u> as a Software Engineer. I have experience building full-stack applications, including NetMax for L3Harris, developing websites with React, and creating mobile apps with React Native. I'm proficient in <strong>Python</strong>, <strong>JavaScript</strong>, and <strong>C++</strong>. My interests include algorithms, databases, and system design. Outside of computer science, I enjoy rock climbing, playing billiards, and pickleball.   
+                </div>
+            </>
+        )
     },
     {
         name: "Gavin Kerr",
