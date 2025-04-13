@@ -62,7 +62,7 @@ const team_data = [
     {
         name: "John (Jack) Severson",
         photo_url: Jack_NetMax,
-        email: "jvseverson@gmaill.com",
+        email: "jvseverson@gmail.com",
         linkedin: "https://www.linkedin.com/in/jack-severson-26618b255/",
         tasks: [
             "Frontend",
