@@ -7,11 +7,12 @@
 import { ImageWithSkeleton } from "@/components/image-with-skeleton";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { Link, Linkedin } from "lucide-react";
+import { Link, Linkedin, Mail } from "lucide-react";
 
 interface TeamMemberCardProps {
     name: string;
     personal_website?: string;
+    email?: string;
     linkedin?: string;
     photo_url: string;
     tasks: string[];
@@ -19,7 +20,7 @@ interface TeamMemberCardProps {
     children?: React.ReactNode;
 }
 
-export const TeamMemberCard = ({ name, personal_website, linkedin, photo_url, tasks, className, children }: TeamMemberCardProps) => {
+export const TeamMemberCard = ({ name, personal_website, linkedin, email, photo_url, tasks, className, children }: TeamMemberCardProps) => {
 
     return (
         <Card className={`w-full mx-auto my-4 ${className},`}>
@@ -34,15 +35,26 @@ export const TeamMemberCard = ({ name, personal_website, linkedin, photo_url, ta
                     <div>
                         <div className="flex flex-row items-center justify-between">
                             <div className="text-4xl mb-4">{name}</div>
-                            {linkedin && (
-                                <a
-                                    href={linkedin}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-blue-500 hover:text-blue-700 flex mb-4">
-                                    <Linkedin size={32} />
-                                </a>
-                            )}
+                            <div className="flex gap-2">
+                                {linkedin && (
+                                    <a
+                                        href={linkedin}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-blue-500 hover:text-blue-700 flex mb-4">
+                                        <Linkedin size={32} />
+                                    </a>
+                                )}
+                                {email && (
+                                    <a
+                                        href={`mailto:${email}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-blue-500 hover:text-blue-700 flex mb-4">
+                                        <Mail size={32} />
+                                    </a>
+                                )}
+                            </div>
                         </div>
 
                         {personal_website && (
@@ -82,17 +94,28 @@ export const TeamMemberCard = ({ name, personal_website, linkedin, photo_url, ta
                 />
                 <div className="gap-4">
                     <div className="mt-2">
-                    <div className="flex flex-row items-center justify-between">
+                        <div className="flex flex-row items-center justify-between">
                             <div className="text-4xl mb-4">{name}</div>
-                            {linkedin && (
-                                <a
-                                    href={linkedin}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-blue-500 hover:text-blue-700 flex mb-4">
-                                    <Linkedin size={32} />
-                                </a>
-                            )}
+                            <div className="flex gap-2">
+                                {linkedin && (
+                                    <a
+                                        href={linkedin}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-blue-500 hover:text-blue-700 flex mb-4">
+                                        <Linkedin size={32} />
+                                    </a>
+                                )}
+                                {email && (
+                                    <a
+                                        href={`mailto:${email}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-blue-500 hover:text-blue-700 flex mb-4">
+                                        <Mail size={32} />
+                                    </a>
+                                )}
+                            </div>
                         </div>
                         {personal_website && (
                             <div className="text-lg mb-2">
@@ -122,7 +145,7 @@ export const TeamMemberCard = ({ name, personal_website, linkedin, photo_url, ta
                     </div>
                 </div>
             </CardContent>
-        </Card >
+        </Card>
     )
 
 }

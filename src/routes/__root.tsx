@@ -18,7 +18,7 @@ const RootLayout = () => {
           <Outlet />
         </div>
 
-        <footer className='w-full'>
+        <footer className='w-full mb-8'>
           <div className='mx-auto flex flex-row justify-center gap-3'>
 
           </div>

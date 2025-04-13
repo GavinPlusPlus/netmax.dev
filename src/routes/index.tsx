@@ -1,10 +1,11 @@
-
 import { createFileRoute, Link } from '@tanstack/react-router'
 import Team_NetMax from '@/assets/photos/Team_NetMax.avif'
-import L3_Logo from '@/assets/L3/L3_Full.svg'
+import L3_Logo_White from '@/assets/L3/L3_Full_White.svg'
+import L3_Logo_Black from '@/assets/L3/L3_Full_Black.svg'
 import { ImageWithSkeleton } from '@/components/image-with-skeleton'
 import Marquee from '@/components/ui/marquee';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { useTheme } from '@/components/theme-provider';
 
 export const Route = createFileRoute('/')({
   component: RouteComponent,
@@ -13,6 +14,10 @@ export const Route = createFileRoute('/')({
 const marquee_items = [ "NetMax", "NetMax", "NetMax", "NetMax", "NetMax", "NetMax" ];
 
 function RouteComponent() {
+
+  // Get the current theme
+  const theme = useTheme();
+  const lightTheme = theme?.theme === 'dark' ? true : false;
 
   return (
     <div className='w-full transition-all animate-fade-in'>
@@ -69,7 +74,7 @@ function RouteComponent() {
           <CardContent>
             <div className='flex flex-col justify-center space-x-4'>
               <ImageWithSkeleton
-                src={L3_Logo}
+                src={lightTheme ? L3_Logo_White : L3_Logo_Black}
                 alt="A logo of L3Harris"
                 className="max-w-xs mx-auto"
                 aspectRatio=''
@@ -80,7 +85,6 @@ function RouteComponent() {
             </div>
           </CardContent>
         </Card>
-
 
       </div>
     </div>
