@@ -13,6 +13,7 @@
 import { Route as rootRoute } from './routes/__root'
 import { Route as TheTeamImport } from './routes/the-team'
 import { Route as TheStackImport } from './routes/the-stack'
+import { Route as PosterImport } from './routes/poster'
 import { Route as IndexImport } from './routes/index'
 
 // Create/Update Routes
@@ -26,6 +27,12 @@ const TheTeamRoute = TheTeamImport.update({
 const TheStackRoute = TheStackImport.update({
   id: '/the-stack',
   path: '/the-stack',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const PosterRoute = PosterImport.update({
+  id: '/poster',
+  path: '/poster',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -44,6 +51,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/poster': {
+      id: '/poster'
+      path: '/poster'
+      fullPath: '/poster'
+      preLoaderRoute: typeof PosterImport
       parentRoute: typeof rootRoute
     }
     '/the-stack': {
@@ -67,12 +81,14 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/poster': typeof PosterRoute
   '/the-stack': typeof TheStackRoute
   '/the-team': typeof TheTeamRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/poster': typeof PosterRoute
   '/the-stack': typeof TheStackRoute
   '/the-team': typeof TheTeamRoute
 }
@@ -80,27 +96,30 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
+  '/poster': typeof PosterRoute
   '/the-stack': typeof TheStackRoute
   '/the-team': typeof TheTeamRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/the-stack' | '/the-team'
+  fullPaths: '/' | '/poster' | '/the-stack' | '/the-team'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/the-stack' | '/the-team'
-  id: '__root__' | '/' | '/the-stack' | '/the-team'
+  to: '/' | '/poster' | '/the-stack' | '/the-team'
+  id: '__root__' | '/' | '/poster' | '/the-stack' | '/the-team'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  PosterRoute: typeof PosterRoute
   TheStackRoute: typeof TheStackRoute
   TheTeamRoute: typeof TheTeamRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  PosterRoute: PosterRoute,
   TheStackRoute: TheStackRoute,
   TheTeamRoute: TheTeamRoute,
 }
@@ -116,12 +135,16 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
+        "/poster",
         "/the-stack",
         "/the-team"
       ]
     },
     "/": {
       "filePath": "index.tsx"
+    },
+    "/poster": {
+      "filePath": "poster.tsx"
     },
     "/the-stack": {
       "filePath": "the-stack.tsx"
