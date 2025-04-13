@@ -16,6 +16,7 @@ const team_data = [
         name: "Dax McPartland",
         photo_url: Dax_NetMax,
         personal_website: "https://daxmcpartland.github.io/",
+        email: "daxmcpartland@gmail.com",
         linkedin: "https://www.linkedin.com/in/dax-mcpartland/",
         tasks: [
             "Frontend",
@@ -61,6 +62,7 @@ const team_data = [
     {
         name: "John (Jack) Severson",
         photo_url: Jack_NetMax,
+        email: "jvseverson@gmaill.com",
         linkedin: "https://www.linkedin.com/in/jack-severson-26618b255/",
         tasks: [
             "Frontend",
@@ -85,6 +87,7 @@ const team_data = [
     {
         name: "Ryan Taffe",
         photo_url: Ryan_NetMax,
+        email: "rtaffe28@gmail.com",
         linkedin: "https://www.linkedin.com/in/ryan-taffe-549b3b260/",
         tasks: [
             "Frontend",
