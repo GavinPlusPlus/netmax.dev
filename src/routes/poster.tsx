@@ -7,6 +7,7 @@ import L3_Logo from '@/assets/L3/L3_Full_Black.svg'
 import KSC_Logo from '@/assets/Utah/KSC_Logo.svg'
 import U_Logo from '@/assets/Utah/ULogo_Horizontal.svg'
 import Arch_Diagram from '@/assets/NetMax_SW_Diagram.png'
+import { Boxes, BrainCircuit, ChartNetwork } from 'lucide-react'
 
 export const Route = createFileRoute('/poster')({
     component: RouteComponent,
@@ -22,11 +23,62 @@ function RouteComponent() {
                     {/* Header */}
                     <div className='flex flex-col items-center text-center mb-4 h-20'>
                         <Separator className='w-full m-1 mb-4 fill-black border-1 rounded-2xl' />
-                        <img src={L3_Logo} alt="L3 Logo" className='w-1/2 h-20' />
+                        <div className='flex flex-row justify-around items-center'>
+                            <img src={L3_Logo} alt="L3 Logo" className='h-18' />
+                        </div>
                         <Separator className='w-full m-1 mt-4 fill-black border-1 rounded-2xl' />
                     </div>
 
                     <Card className='mt-[4vh]'>
+                        <CardHeader>
+                            <CardTitle className='text-3xl font-bold'>
+                                What is it?
+                            </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <div className='grid grid-cols-8 gap-2 items-center my-2'>
+                                <div>
+                                    <BrainCircuit size={48} />
+                                </div>
+                                <div className='col-span-7'>
+                                    <p className='text-xl font-bold'>
+                                        API Simplification
+                                    </p>
+                                    <p className='text-lg'>
+                                        Serving as a bridge between L3 Engineers and TRex, NetMax provides a streamlined experience for running and managing network tests.
+                                    </p>
+                                </div>
+                            </div>
+                            <div className='grid grid-cols-8 gap-2 items-center my-2'>
+                                <div>
+                                    <ChartNetwork size={48} />
+                                </div>
+                                <div className='col-span-7'>
+                                    <p className='text-xl font-bold'>
+                                        Real Time Data Collection
+                                    </p>
+                                    <p className='text-lg'>
+                                        Powered by SignalR, NetMax provides real-time data collection and analysis for network performance metrics.
+                                    </p>
+                                </div>
+                            </div>
+                            <div className='grid grid-cols-8 gap-2 items-center my-2'>
+                                <div>
+                                    <Boxes size={48} />
+                                </div>
+                                <div className='col-span-7'>
+                                    <p className='text-xl font-bold'>
+                                        Chassis Centralization
+                                    </p>
+                                    <p className='text-lg'>
+                                        NetMax provides a single interface for managing multiple NTG chassis, allowing for easy configuration and management of network tests.
+                                    </p>
+                                </div>
+                            </div>
+                        </CardContent>
+                    </Card>
+
+                    <Card className='mt-4'>
                         <CardHeader>
                             <CardTitle className='text-3xl font-bold'>
                                 Key Features
