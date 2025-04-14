@@ -13,7 +13,7 @@ const RootLayout = () => {
     <>
       <div className="svg-background"></div>
       {router.location.pathname !== "/poster" ? (
-        <div className='transition-all animate-fade-in min-h-screen container mx-auto'>
+        <div className='transition-all animate-fade-in min-h-screen mx-auto'>
 
           <header>
             <Nav />

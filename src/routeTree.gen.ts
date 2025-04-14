@@ -11,12 +11,19 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as UserTutorialImport } from './routes/user-tutorial'
 import { Route as TheTeamImport } from './routes/the-team'
 import { Route as TheStackImport } from './routes/the-stack'
 import { Route as PosterImport } from './routes/poster'
 import { Route as IndexImport } from './routes/index'
 
 // Create/Update Routes
+
+const UserTutorialRoute = UserTutorialImport.update({
+  id: '/user-tutorial',
+  path: '/user-tutorial',
+  getParentRoute: () => rootRoute,
+} as any)
 
 const TheTeamRoute = TheTeamImport.update({
   id: '/the-team',
@@ -74,6 +81,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TheTeamImport
       parentRoute: typeof rootRoute
     }
+    '/user-tutorial': {
+      id: '/user-tutorial'
+      path: '/user-tutorial'
+      fullPath: '/user-tutorial'
+      preLoaderRoute: typeof UserTutorialImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -84,6 +98,7 @@ export interface FileRoutesByFullPath {
   '/poster': typeof PosterRoute
   '/the-stack': typeof TheStackRoute
   '/the-team': typeof TheTeamRoute
+  '/user-tutorial': typeof UserTutorialRoute
 }
 
 export interface FileRoutesByTo {
@@ -91,6 +106,7 @@ export interface FileRoutesByTo {
   '/poster': typeof PosterRoute
   '/the-stack': typeof TheStackRoute
   '/the-team': typeof TheTeamRoute
+  '/user-tutorial': typeof UserTutorialRoute
 }
 
 export interface FileRoutesById {
@@ -99,14 +115,21 @@ export interface FileRoutesById {
   '/poster': typeof PosterRoute
   '/the-stack': typeof TheStackRoute
   '/the-team': typeof TheTeamRoute
+  '/user-tutorial': typeof UserTutorialRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/poster' | '/the-stack' | '/the-team'
+  fullPaths: '/' | '/poster' | '/the-stack' | '/the-team' | '/user-tutorial'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/poster' | '/the-stack' | '/the-team'
-  id: '__root__' | '/' | '/poster' | '/the-stack' | '/the-team'
+  to: '/' | '/poster' | '/the-stack' | '/the-team' | '/user-tutorial'
+  id:
+    | '__root__'
+    | '/'
+    | '/poster'
+    | '/the-stack'
+    | '/the-team'
+    | '/user-tutorial'
   fileRoutesById: FileRoutesById
 }
 
@@ -115,6 +138,7 @@ export interface RootRouteChildren {
   PosterRoute: typeof PosterRoute
   TheStackRoute: typeof TheStackRoute
   TheTeamRoute: typeof TheTeamRoute
+  UserTutorialRoute: typeof UserTutorialRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
@@ -122,6 +146,7 @@ const rootRouteChildren: RootRouteChildren = {
   PosterRoute: PosterRoute,
   TheStackRoute: TheStackRoute,
   TheTeamRoute: TheTeamRoute,
+  UserTutorialRoute: UserTutorialRoute,
 }
 
 export const routeTree = rootRoute
@@ -137,7 +162,8 @@ export const routeTree = rootRoute
         "/",
         "/poster",
         "/the-stack",
-        "/the-team"
+        "/the-team",
+        "/user-tutorial"
       ]
     },
     "/": {
@@ -151,6 +177,9 @@ export const routeTree = rootRoute
     },
     "/the-team": {
       "filePath": "the-team.tsx"
+    },
+    "/user-tutorial": {
+      "filePath": "user-tutorial.tsx"
     }
   }
 }

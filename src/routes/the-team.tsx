@@ -54,7 +54,7 @@ const team_data = [
                     Bio:
                 </div>
                 <div className='text-sm'>
-                    Hey there! My name is Gavin Kerr, and I am graduating at the end of this month with a bachelor's in computer science from the University of Utah. I'm interested in a wide variety of software development topics, including but not limited to full stack development, networking, and automation. After graduation I'll be joining <u><a href="https://lindellyachts.com" target="_blank" rel="noopener noreferrer">Lindell Yachts</a></u> in Washington State to work on internal software tools and automation on board. I have experience building full stack applications, like NetMax, and other projects like <u><a href="https://gavinkerr.dev/#/vesselview" target="_blank" rel="noopener noreferrer">VesselView</a></u> at work, along with iOS app development with SwiftUI, and some hardware experience with microcontrollers.  Outside of work and projects I enjoy snow skiing, wake surfing, working on my car, and Formula 1. 
+                    Hey there! My name is Gavin Kerr, and I am graduating at the end of this month with a bachelor's in computer science from the University of Utah. I'm interested in a wide variety of software development topics, including but not limited to full stack development, networking, and automation. After graduation I'll be joining <u><a href="https://lindellyachts.com" target="_blank" rel="noopener noreferrer">Lindell Yachts</a></u> in Washington State to work on internal software tools and automation on board. I have experience building full stack applications, like NetMax, and other projects like <u><a href="https://gavinkerr.dev/#/vesselview" target="_blank" rel="noopener noreferrer">VesselView</a></u> at work, along with iOS app development with SwiftUI, and some hardware experience with microcontrollers.  Outside of work and projects I enjoy snow skiing, wake surfing, working on my car, and Formula 1.
                 </div>
             </>
         )
@@ -76,10 +76,13 @@ const team_data = [
                     Bio:
                 </div>
                 <div className='text-sm'>
-                    I'm a computer science honors student at the University of Utah, interested in networking, system design, and computer graphics. I enjoy building full-stack systems that work well and are easy to use. Some of my projects have involved data transfer protocols, 3D graphics with OpenGL, and tools for testing network performance. These projects have helped me figure out what kinds of technical challenges I enjoy solving most.
+                    I'm a computer science honors student at the University of Utah, interested in networking, system design, and computer graphics. I am proficient in <b>Python</b>, <b>Java</b>, <b>C#</b>, and <b>C++</b>. I enjoy building full-stack systems that work well and are easy to use. Some of my projects have involved data transfer protocols, 3D graphics with OpenGL, and tools for testing network performance (this being the capstone project NetMax). These projects have helped me figure out what kinds of technical challenges I enjoy solving most.
                     <br />
                     <br />
-                    I also work as a teaching assistant for the Computer Science Discrete Structures course. I run lab sessions each week and help write homework and exam problems. It's been a great way to get better at explaining concepts and supporting other students. When I'm not working on school-related stuff, I like to get outside and spend time backpacking or skiing.
+                    I also work as a teaching assistant for the Computer Science Discrete Structures course. I run lab sessions each week and help write homework and exam problems. It's been a great way to get better at explaining concepts and supporting other students.
+                    <br />
+                    <br />
+                    When I'm not working on school-related stuff, I like to get outside and spend time backpacking or skiing. I also enjoy playing board games and table top games with friends.
                 </div>
             </>
         )

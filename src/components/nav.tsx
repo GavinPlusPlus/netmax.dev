@@ -24,6 +24,10 @@ const Routes = [
         name: "The Stack",
         route: "/the-stack"
     },
+    {
+        name: "User Tutorial",
+        route: "/user-tutorial"
+    }
 ]
 
 export const Nav = () => {
