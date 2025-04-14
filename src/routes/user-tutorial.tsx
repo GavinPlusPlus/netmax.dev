@@ -17,14 +17,14 @@ function RouteComponent() {
 
             <iframe
                 className='w-full h-[calc(100vh-300px)] rounded-base flex flex-col shadow-shadow border-2 gap-6 py-6 border-border bg-white text-foreground font-base'
-                src="/public/docs/NetMax_Documentation.html"
+                src="/docs/NetMax_Documentation.html"
                 title="User Tutorial"
             />
 
             <Button
                 className='w-full mt-5'
                 onClick={() => {
-                    window.open('/public/docs/NetMax_Documentation.html', '_blank');
+                    window.open('/docs/NetMax_Documentation.html', '_blank');
                 }}
             >
                 <ExternalLink className='mr-2' />
