@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>NetMax</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="netmax">NetMax</h1>
+<h3 id="l3harris--university-of-utah">L3Harris + University of Utah</h3>
+<h4 id="written-by-dax-mcpartland-gavin-kerr-jack-severson-ryan-taffe">Written by Dax McPartland, Gavin Kerr, Jack Severson, Ryan Taffe</h4>
+<h5 id="may-1st-2025">May 1st, 2025</h5>
+<hr>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+<li>
+<p><a href="#getting-started">Getting Started</a></p>
+<ul>
+<li><a href="#overview-of-netmax">Overview of NetMax</a></li>
+<li><a href="#installation--setup">Installation &amp; Setup</a></li>
+<li><a href="#using-the-api-from-the-terminal">Using the API from the Terminal</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#creating-a-chassis">Creating a Chassis</a></p>
+<ul>
+<li><a href="#chassis-creation-from-the-ui">Chassis Creation from the UI</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#creating-a-testing-profile">Creating a Testing Profile</a></p>
+<ul>
+<li><a href="#profile-creation-from-the-ui">Profile Creation from the UI</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#performing-tests">Performing Tests</a></p>
+<ul>
+<li><a href="#running-tests-from-the-ui">Running Tests from the UI</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#analytics">Analytics</a></p>
+<ul>
+<li><a href="#accessing-analytics-from-the-ui">Accessing Analytics from the UI</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#global-configuration-settings">Global Configuration Settings</a></p>
+<ul>
+<li><a href="#trex-settings">TRex Settings</a></li>
+<li><a href="#scheduling-settings">Scheduling Settings</a></li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="getting-started">Getting Started</h2>
+<h3 id="overview-of-netmax">Overview of NetMax</h3>
+<p>NetMax is a capstone project for the University of Utah (2024-2025). The project was sponsored and developed for L3Harris. NetMax is an application that allows engineers at L3Harris to network test hardware. The application utilizes <a href="https://trex-tgn.cisco.com/trex/doc/index.html">TRex</a> to define and run network traffic.</p>
+<h3 id="installation--setup">Installation &amp; Setup</h3>
+<p>To start running NetMax, first check the .env.example file for environment variables to set. Alternatively, rename the .env.example file to be '.env'. Then navigate to the <code>docker-compose.yml</code> file in the current directory. Then, in the terminal, run:</p>
+<pre><code class="language-sh">docker compose build
+</code></pre>
+<p>This may take some time as it creates the necessary containers for running the app. Once the build process is complete, run:</p>
+<pre><code class="language-sh">docker compose up
+</code></pre>
+<p>This will start the containers. To verify that the project is running, open any web browser and navigate to:</p>
+<pre><code>http://localhost/
+</code></pre>
+<p>This will bring you to the dashboard of the app. The remainder of this documentation explains how to perform various actions using both the frontend UI and the API via terminal commands.</p>
+<hr>
+<h2 id="using-the-api-from-the-terminal">Using the API from the Terminal</h2>
+<p>NetMax provides a RESTful API that can be accessed using <code>curl</code>. This allows you to create and manage chassis, testing profiles, and run tests from the command line. You can also reference the <a href="http://localhost/swagger/index.html">Swagger API documentation</a> for more details.</p>
+<h3 id="example">Example</h3>
+<p>To create a chassis from the terminal, send a <code>POST</code> request:</p>
+<pre><code class="language-sh">curl --header <span class="hljs-string">&quot;Content-Type: application/json&quot;</span> \
+     --request POST \
+     --data <span class="hljs-string">&#x27;{&quot;name&quot;: &quot;chassisName&quot;, &quot;description&quot;: &quot;chassisDescription&quot;, &quot;hostname&quot;: &quot;192.168.1.1&quot;, &quot;syncPort&quot;: 4501, &quot;asyncPort&quot;: 4500}&#x27;</span> \
+     http://localhost/api/Chassis
+</code></pre>
+<hr>
+<h2 id="creating-a-chassis">Creating a Chassis</h2>
+<p>The first step in running a network test is defining the hardware to be tested.</p>
+<h3 id="chassis-creation-from-the-ui">Chassis Creation from the UI</h3>
+<p>To create a chassis from the frontend, navigate to <strong>New Chassis Configuration</strong> under the <strong>Settings</strong> tab in the navigation sidebar.</p>
+<p><img src="/public/docs/images/chassis-creation.png" alt="Chassis creation"></p>
+<p>Here, you will define the chassis information. Click <strong>Add Chassis</strong> to verify its correctness. NetMax will not allow the creation of a hardware chassis if it is not online.</p>
+<p>After creating a chassis, you can view all configured chassis under the <strong>View Configured Chassis</strong> page in the <strong>Settings</strong> tab.</p>
+<p><img src="/public/docs/images/chassis-query.png" alt="Chassis query"></p>
+<p>This will display all previously created chassis. Clicking <strong>View</strong> on one will show its hardware capabilities and allow modifications or deletion. <strong>Note:</strong> If TRex is not running, you will not be able to view chassis capabilities.</p>
+<hr>
+<h2 id="creating-a-testing-profile">Creating a Testing Profile</h2>
+<p>To define the type of network test to be performed, a new testing profile must be created.</p>
+<h3 id="profile-creation-from-the-ui">Profile Creation from the UI</h3>
+<p>To create a profile, navigate to <strong>New Profile</strong> under the <strong>Profiles</strong> tab in the sidebar. Here, you can define how you want to test by adding new data streams and specifying the test parameters.</p>
+<p><img src="/public/docs/images/profile-creation.png" alt="Profile creation"></p>
+<p>To view previously created profiles, go to the <strong>Profiles</strong> page under the <strong>Profiles</strong> tab.</p>
+<p>This page displays all existing profiles and allows you to <strong>edit</strong> or <strong>delete</strong> them by clicking the <strong>View</strong> button.</p>
+<p><img src="/public/docs/images/profile-query.png" alt="Profiles query"></p>
+<hr>
+<h2 id="performing-tests">Performing Tests</h2>
+<h3 id="running-tests-from-the-ui">Running Tests from the UI</h3>
+<p>To execute a test using the UI, navigate to <strong>New Test</strong> in the <strong>Tests</strong> tab, select your chassis. This will reveal available ports for that chassis. Select which ports you would like to run the test on. For each port a dropdown menu will become available. Select the profile you want for each port. Then click <strong>Next</strong>.</p>
+<p><img src="/public/docs/images/new-test.png" alt="New Test">
+<img src="/public/docs/images/new-test-filled.png" alt="New Test Filled In"></p>
+<p>From here, you can either run the test immediately or schedule it for a later date and time.</p>
+<p>To view all tests, click on the <strong>View Tests</strong> button under the <strong>Tests</strong> tab. This page displays all tests along with their statuses, which can be: <strong>Completed, Running, Failed, Disrupted, Scheduled,</strong> or <strong>Killed</strong>.</p>
+<p><img src="/public/docs/images/test-query.png" alt="Tests query"></p>
+<p>You can also manage tests from this page. If you need to stop or rerun a test, simply click on the <strong>View</strong> action next to it.</p>
+<hr>
+<h2 id="analytics">Analytics</h2>
+<p>To analyze test performance, navigate to the <strong>Analytics Dashboard</strong> under the <strong>Analytics</strong> tab. This page provides insights into completed tests, including packet loss, latency, and throughput.</p>
+<h3 id="accessing-analytics-from-the-ui">Accessing Analytics from the UI</h3>
+<p>This pages allows you to customize your charts to track different metrics for your tests. Clicking on the <strong>New Chart</strong> button will add a chart to your view where you have the ability to customize the time frame, metrics, and ports that the traffic was running on.</p>
+<p><img src="/public/docs/images/analytics.png" alt="Analytics Page"></p>
+<hr>
+<h2 id="global-configuration-settings">Global Configuration Settings</h2>
+<p>The global configuration file is accessible under the <strong>Settings</strong> tab. Here, you can configure TRex and scheduling settings.</p>
+<ul>
+<li>
+<p><strong>TRex Settings</strong>:</p>
+<ul>
+<li>Enforce test stop times: If a test is scheduled for 10 seconds, you can configure whether it should be forcefully stopped at exactly 10 seconds. Note that in TRex, high-speed tests might take additional time to process all data, even after reaching the scheduled time limit.</li>
+</ul>
+</li>
+<li>
+<p><strong>Scheduling Settings</strong>:</p>
+<ul>
+<li>Define the maximum duration for a scheduled test.</li>
+<li>Set limits on how far in advance a test can be scheduled.</li>
+</ul>
+</li>
+</ul>
+<p>These settings help manage test execution and ensure consistency across scheduled tests.</p>
+<hr>
+
+            
+            
+        </body>
+        </html>
