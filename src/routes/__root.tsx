@@ -2,16 +2,17 @@ import { Nav } from '@/components/nav';
 import {createRootRoute, Outlet, useRouterState } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/router-devtools'
 import "../index.css"
+import { useTheme } from '@/components/theme-provider';
+import { cn } from '@/lib/utils';
 
 const RootLayout = () => {
 
   const router = useRouterState();
-
-  console.log(router.location.pathname);
+  const theme = useTheme().activeTheme;
 
   return (
     <>
-      <div className="svg-background"></div>
+      <div className={cn(theme === "dark" ? "svg-background-dark" : "svg-background")}></div>
       {router.location.pathname !== "/poster" ? (
         <div className='transition-all animate-fade-in min-h-screen mx-auto'>
 

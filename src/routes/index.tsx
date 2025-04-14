@@ -16,8 +16,7 @@ const marquee_items = [ "NetMax", "NetMax", "NetMax", "NetMax", "NetMax", "NetMa
 function RouteComponent() {
 
   // Get the current theme
-  const theme = useTheme();
-  const lightTheme = theme?.theme === 'dark' ? true : false;
+  const theme = useTheme().activeTheme;
 
   return (
     <div className='w-full transition-all animate-fade-in'>
@@ -74,7 +73,7 @@ function RouteComponent() {
           <CardContent>
             <div className='flex flex-col justify-center space-x-4'>
               <ImageWithSkeleton
-                src={lightTheme ? L3_Logo_White : L3_Logo_Black}
+                src={theme === "dark" ? L3_Logo_White : L3_Logo_Black}
                 alt="A logo of L3Harris"
                 className="max-w-xs mx-auto"
                 aspectRatio=''
