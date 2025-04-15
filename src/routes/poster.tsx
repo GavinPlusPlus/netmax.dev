@@ -90,6 +90,7 @@ function RouteComponent() {
                                 <li>Customizable user interface</li>
                                 <li>Integration with existing systems</li>
                                 <li>Scalable architecture for future growth</li>
+                                <li>Stored network profiles for consistent testing</li>
                             </ul>
                         </CardContent>
                     </Card>
@@ -105,7 +106,6 @@ function RouteComponent() {
                     </div>
 
                     {/* Team Photo */}
-
                     <Card className='mt-[4vh]'>
                         <CardHeader>
                             <CardTitle className='text-3xl font-bold'>
@@ -117,6 +117,20 @@ function RouteComponent() {
                             <div className='flex flex-col items-center text-center mt-2'>
                                 <p><b>From left to right:</b> Ryan Taffe, Gavin Kerr, Jack (John) Severson, Dax McPartland</p>
                             </div>
+                        </CardContent>
+                    </Card>
+
+                    {/* New Box on Network Traffic Generation */}
+                    <Card className='mt-4'>
+                        <CardHeader>
+                        <CardTitle className='text-3xl font-bold'>
+                                Network Testing
+                            </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <p className='text-sm'>
+                                Network traffic generation is essential for network testing. It simulates real-world conditions, enabling engineers to identify performance bottlenecks and other issues under varying conditions.
+                            </p>
                         </CardContent>
                     </Card>
 
@@ -192,7 +206,6 @@ function RouteComponent() {
 
                 </div>
             </div>
-        </div >
+        </div>
     )
-
 }
